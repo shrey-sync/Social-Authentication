@@ -100,8 +100,12 @@ WSGI_APPLICATION = "elevate.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "ENGINE": "django.db.backends.postgresql_psycopg2",
+        "NAME": "Social Authentication",
+        "USER": "postgres",
+        "PASSWORD": "postgres",
+        "HOST": "",
+        "PORT": "5432",
     }
 }
 
@@ -149,4 +153,9 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 LOGIN_REDIRECT_URL = "/"
 
-# EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_USE_TLS = True
+EMAIL_HOST = "smtp.gmail.com"
+EMAIL_HOST_USER = "shrey.synchronizedcodelab@gmail.com"
+EMAIL_HOST_PASSWORD = "75V.mvc>S12Gm/0av4"
+EMAIL_PORT = 587
